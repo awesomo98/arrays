@@ -11,4 +11,12 @@ class ArraysTest < MiniTest::Test
    	end.new
 	end
 
+
+
+	def test_max
+		assert_equal 5, @m.max([1,5,3])
+		assert_equal 100, @m.max([100,2,56])
+		assert_equal 10, @m.max([6,4,10])
+	end
+
 end
