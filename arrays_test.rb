@@ -12,6 +12,10 @@ class ArraysTest < MiniTest::Test
 	end
 
 
+def test_middles
+		assert_equal [2,3], @m.middles([1,2,3], [8,3,7])
+	end
+
 
 	def test_max
 		assert_equal 5, @m.max(1,5,3)
