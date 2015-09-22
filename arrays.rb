@@ -3,9 +3,8 @@ module Arrays
 	# 	max = Array.new
 	# end
 
-		def middles(array1, array2)
-		array1 = (a, b, c)
-		array2 = (d, e, f)
+		def middles (array_1, array_2)
+		[array_1[1], array_2[1]]
 	end
 
 	def max(a,b,c)
@@ -26,6 +25,36 @@ module Arrays
 		true
 	end
 
+	def repeat_separator(word, separator, count)
+		str = ""
+		str = str + "#{word}#{separator}" * (count - 1) + word
+		str
+	end
+
+	def same_ends?(arr, n)
+		0.upto(n) do |i|
+			if arr[i] == arr[-n + i]
+				return true
+			else
+				return false
+			end
+		end
+	end
+
+	def starry?(str)
+		index = 0
+		0.upto(str.length - 1) do |n|
+			index = str.index('*', n)
+			if n == 0 || n == str.length - 1
+				next
+			elsif str[index - 1] == str[index + 1]
+				return true
+			else
+				return false
+			end
+		end
+	end
+
 	def plus_it(word, token)
 		for i in 0..(word.length - token.length)
 			check = word[i..(i+token.length)]
@@ -37,9 +66,22 @@ module Arrays
 		end
 	end
 
-	def zero_front
-		
+	def zero_front(array)
+		new_array = []
+		for element in 0...array.length
+			if array[element] == 0
+				new_array.push(array[element])
+			end
+		end
+		for element in 0...array.length
+			if array[element] > 0 
+				new_array.push(array[element])
+			end
+		end
+		new_array
 	end
+
+	
 	
 	
 end

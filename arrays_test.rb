@@ -61,4 +61,13 @@ def test_middles
 		assert_equal [1, 2, 3, 4, 5], @m.zero_front([1, 2, 3, 4, 5])
 	end
 
+	def test_ten_run
+		assert_equal [2, 10, 10, 10, 20, 20], @m.ten_run([2, 10, 3, 4, 20, 5])
+		assert_equal [5, 2, 3, 0, 0, 0, 10, 10] @m.ten_run([5, 2, 3, 0, 1, 5, 10, 13])
+		assert_equal [1, 2, 3, 4, 5] @m.ten_run([1, 2, 3, 4, 5])
+		assert_equal [10, 10, 10] @m.ten_run([10, 11, 12])
+		assert_equal [20, 20, 20] @m.ten_run([20, 20, 20])
+
+	end
+
 end
