@@ -12,7 +12,7 @@ class ArraysTest < MiniTest::Test
 	end
 
 
-def test_middles
+	def test_middles
 		assert_equal [2,3], @m.middles([1,2,3], [8,3,7])
 	end
 
@@ -67,7 +67,13 @@ def test_middles
 		assert_equal [1, 2, 3, 4, 5] @m.ten_run([1, 2, 3, 4, 5])
 		assert_equal [10, 10, 10] @m.ten_run([10, 11, 12])
 		assert_equal [20, 20, 20] @m.ten_run([20, 20, 20])
+	end
 
+	def test_max_span
+		assert_equal 4 , @m.max_span([1,2,1,1,3])
+		assert_equal 6, @m.max_span([1,4,2,1,4,1,4])
+		assert_equal 6, @m.max_span([1,4,2,1,4,4,4])
+   		assert_equal 0, @m.max_span([1,2,3,4,5,6])
 	end
 
 end

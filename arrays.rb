@@ -81,7 +81,28 @@ module Arrays
 		new_array
 	end
 
-	
+	def ten_run(array)
+		multiple = 0
+		for element in 0...array.length
+			multiple = array[element] if array[element] % 10 == 0
+			array[element] = multiple if multiple > 0
+		end
+		array	
+	end
+
+		def max_span(array)
+		span = 0
+		for n in 0...array.length
+			for x in n...array.length
+				if array[x] == array[n]
+					span = (1 +(x-n)) if (1+(x-n)) > span && x-n >0
+				end
+			end
+		end
+		return span
+	end
+
+
 	
 	
 end
